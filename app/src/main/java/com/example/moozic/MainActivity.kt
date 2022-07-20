@@ -179,9 +179,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         if(!PlayerActivity.isPlaying&&PlayerActivity.musicService!=null){
-            PlayerActivity.musicService!!.stopForeground(true)
-            PlayerActivity.musicService!!.mediaPlayer!!.release()
-            exitProcess(1)
+           closeApplication()
 
         }
     }

@@ -6,7 +6,6 @@ import android.content.Intent
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlin.system.exitProcess
 
 class NotificationReceiver : BroadcastReceiver(){
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -26,10 +25,7 @@ class NotificationReceiver : BroadcastReceiver(){
             }
             ApplicationClass.EXIT-> {
                 Toast.makeText(context, "Exiting..", Toast.LENGTH_SHORT).show()
-                PlayerActivity.musicService!!.stopForeground(true)
-                PlayerActivity.musicService!!.mediaPlayer!!.release()
-                PlayerActivity.musicService=null
-                exitProcess(1)
+                closeApplication()
             }
 
         }
