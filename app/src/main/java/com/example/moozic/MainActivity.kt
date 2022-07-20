@@ -8,7 +8,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.Audio.Media
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
@@ -27,6 +29,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var musicAdapter: MusicAdapter
     companion object {
        lateinit var MusicListMA :ArrayList<Music>
+        lateinit var musicListSearch:ArrayList<Music>
+        var search:Boolean=false
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -182,5 +187,32 @@ class MainActivity : AppCompatActivity() {
            closeApplication()
 
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search_view_menu,menu)
+        val searchView=menu?.findItem(R.id.searchView)?.actionView as SearchView
+        searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean=true
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                musicListSearch=ArrayList()
+            if(newText!=null){
+                val userInput=newText.lowercase()
+                for(song in MusicListMA)
+                    if(song.title.lowercase().contains(userInput)){
+                        musicListSearch.add(song)
+                    }
+                    search=true
+                    musicAdapter.updateMusicList(searchList = musicListSearch)
+
+            }
+
+                return true
+            }
+
+
+        })
+        return super.onCreateOptionsMenu(menu)
     }
 }

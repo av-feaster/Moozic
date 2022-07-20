@@ -1,6 +1,8 @@
 package com.example.moozic
 
+import android.app.Activity
 import android.media.MediaMetadataRetriever
+import android.widget.Toast
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
@@ -42,3 +44,6 @@ fun closeApplication() {
      }
 
 
+fun showToast(activity:Activity,msg:String){
+    Toast.makeText(activity,msg,Toast.LENGTH_SHORT).show()
+}

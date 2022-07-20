@@ -12,7 +12,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.moozic.databinding.MusicViewBinding
 
 
-class MusicAdapter(private val context: Context,private val musicList:ArrayList<Music>):RecyclerView.Adapter<MusicAdapter.MyHolder>(){
+class MusicAdapter(private val context: Context,private var musicList:ArrayList<Music>):RecyclerView.Adapter<MusicAdapter.MyHolder>(){
     class MyHolder(binding: MusicViewBinding):RecyclerView.ViewHolder(binding.root) {
 
         val title=binding.songNameMV
@@ -38,10 +38,11 @@ class MusicAdapter(private val context: Context,private val musicList:ArrayList<
             .apply(RequestOptions().placeholder(R.drawable.music_player_icon).centerCrop())
             .into(holder.image )
         holder.root.setOnClickListener{
-            val intent= Intent(context,PlayerActivity::class.java)
-            intent.putExtra("index",position)
-            intent.putExtra("class","MusicAdapter")
-            ContextCompat.startActivity(context,intent,null)
+            when{
+                MainActivity.search->sendIntent(ref="MusicAdapterSearch",posi=position)
+                else->sendIntent(ref="MusicAdapter",posi=position)
+
+            }
         }
 
     }
@@ -53,4 +54,17 @@ class MusicAdapter(private val context: Context,private val musicList:ArrayList<
         return musicList.size
     }
 
+    //update musict list
+    fun updateMusicList(searchList:ArrayList<Music>){
+        musicList= ArrayList()
+        musicList.addAll(searchList)
+        notifyDataSetChanged()
+    }
+    private fun sendIntent(ref:String,posi: Int){
+        val intent= Intent(context,PlayerActivity::class.java)
+        intent.putExtra("index",posi)
+        intent.putExtra("class",ref)
+        ContextCompat.startActivity(context,intent,null)
+
+    }
 }
