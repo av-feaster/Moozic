@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/back_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/fav_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/next_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/pause_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/play_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/playlist_icon.xml" value="0.1805" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/prev_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/previous_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/scrollbar_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/shuffle_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/drawable/slash_screen.xml" value="0.1805" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/activity_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/activity_player.xml" value="0.5" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/activity_playlist.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/bottom_sheet.xml" value="0.1796875" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/music_view.xml" value="0.1796875" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/layout/nav_header.xml" value="0.1796875" />
+        <entry key="..\:/Users/User/Documents/Moozic/app/src/main/res/menu/nav_menu.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
